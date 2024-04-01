@@ -1,10 +1,23 @@
 import React from "react";
+import Link from 'next/link'
 
 type Props = {};
 
+const MyButton = React.forwardRef(({ onClick, href }, ref) => {
+  return (
+    <a
+      href={href} onClick={onClick} ref={ref}
+      type="button"
+      className="relative rounded-xl bg-orange-500 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 font-medium"
+    >
+      Donate Now
+    </a>
+  )
+})
+
 function NavBar({}: Props) {
   return (
-    <nav className="bg-transparent transition duration-500 ease-in-out">
+    <nav className="group bg-transparent hover:bg-white transition duration-500 ease-in-out">
       <div className="mx-auto max-w-7xl px-2 sm:px-0">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -20,13 +33,13 @@ function NavBar({}: Props) {
                 className="block h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
@@ -34,13 +47,13 @@ function NavBar({}: Props) {
                 className="hidden h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -49,35 +62,43 @@ function NavBar({}: Props) {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex items-center">
               <img
-                className="h-20 w-auto"
+                className="flex h-20 w-auto group-hover:hidden"
+                src="/WhiteLogoTransparent.png"
+                alt=""
+              />
+              <img
+                className="hidden h-20 w-auto group-hover:flex"
                 src="/BlackLogoTransparent.png"
-                alt="Your Company"
+                alt=""
               />
               <div className="ml-2">
                 <div className="hidden sm:block">
                   <div className="flex space-x-4">
                     <a
-                      href="#"
-                      className="text-gray-700 hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium"
+                      href="/families"
+                      className="text-white hover:underline group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
                       aria-current="page"
                     >
                       Families
                     </a>
                     <a
-                      href="#"
-                      className="text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      href="/teams"
+                      className="text-white hover:underline group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      aria-current="page"
                     >
                       Teams
                     </a>
                     <a
-                      href="#"
-                      className="text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      href="/about"
+                      className="text-white hover:underline group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      aria-current="page"
                     >
                       About
                     </a>
                     <a
-                      href="#"
-                      className="text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      href="/contact"
+                      className="text-white hover:underline group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      aria-current="page"
                     >
                       Contact
                     </a>
@@ -87,12 +108,9 @@ function NavBar({}: Props) {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button
-              type="button"
-              className="relative rounded-xl bg-orange-500 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-             Donate Now
-            </button>
+            <Link href="/donate" passHref legacyBehavior>
+              <MyButton/>
+            </Link>
 
             <div className="relative ml-3">
               {/* <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex={-1}>
