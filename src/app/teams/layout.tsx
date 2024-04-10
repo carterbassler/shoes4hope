@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+import NavBarBackground from "@/components/NavBarBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,9 @@ export default function TeamsLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <div>{children}</div>
+    <div>
+        <NavBarBackground color="black"/>
+        {children}
+    </div>
   );
 }
