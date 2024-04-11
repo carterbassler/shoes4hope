@@ -5,7 +5,7 @@ type Props = {};
 
 function NavBar({}: Props) {
   return (
-    <nav className="fixed inset-x-0 group bg-transparent hover:bg-white transition duration-500 ease-in-out">
+    <nav className="fixed inset-x-0 group bg-transparent hover:bg-white transition duration-500 ease-in-out z-10">
       <div className="mx-auto max-w-7xl px-2 sm:px-0">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">

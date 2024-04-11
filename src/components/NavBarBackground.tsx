@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const colorClasses = {
     black: "from-black",
-    blue: "from-blue", // example for addition of future colors
+    blue: "from-blue-900", // example for addition of future colors
   };
   
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 
 function NavBarBackground({color}: Props) {
   return (
-    <div className={`h-32 bg-gradient-to-b ${colorClasses[color] || colorClasses.black} from-25%`}></div>
+    <div className={`fixed h-32 w-full bg-gradient-to-b ${colorClasses[color] || colorClasses.black} from-25% z-0`}></div>
   );
 }
 
