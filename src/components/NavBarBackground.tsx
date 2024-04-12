@@ -12,7 +12,7 @@ type Props = {
 
 function NavBarBackground({color}: Props) {
   return (
-    <div className={`fixed h-32 w-full bg-gradient-to-b ${colorClasses[color] || colorClasses.black} from-0% z-0`}></div>
+    <div className={`absolute h-32 w-full bg-gradient-to-b ${colorClasses[color] || colorClasses.black} from-0% z-0`}></div>
   );
 }
 
