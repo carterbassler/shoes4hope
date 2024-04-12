@@ -1,11 +1,31 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 
 type Props = {};
 
 function NavBar({}: Props) {
+  const [scrolledPastThreshold, setScrolledPastThreshold] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 50) {
+        setScrolledPastThreshold(true);
+      } else {
+        setScrolledPastThreshold(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed inset-x-0 group bg-transparent hover:bg-white transition duration-500 ease-in-out z-10">
+    <nav className={`fixed inset-x-0 group ${scrolledPastThreshold ? "bg-black" : "bg-transparent"} hover:bg-white transition duration-300 ease-in-out z-10`}>
       <div className="mx-auto max-w-7xl px-2 sm:px-0">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -49,16 +69,16 @@ function NavBar({}: Props) {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex items-center">
-              <a href="/">
+              <a href="/" className="absolute">
                 <img
-                  className="flex h-20 w-auto group-hover:hidden"
+                  className="relative flex h-20 w-auto transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                   src="/WhiteLogoTransparent.png"
                   alt=""
                 />
               </a>
               <a href="/">
                 <img
-                  className="hidden h-20 w-auto group-hover:flex"
+                  className="relative flex h-20 w-auto transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                   src="/BlackLogoTransparent.png"
                   alt=""
                 />
@@ -68,28 +88,28 @@ function NavBar({}: Props) {
                   <div className="flex space-x-4">
                     <a
                       href="/families"
-                      className="text-white hover:underline group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      className="text-white hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
                       aria-current="page"
                     >
                       Families
                     </a>
                     <a
                       href="/teams"
-                      className="text-white hover:underline group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      className="text-white hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
                       aria-current="page"
                     >
                       Teams
                     </a>
                     <a
                       href="/about"
-                      className="text-white hover:underline group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      className="text-white hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
                       aria-current="page"
                     >
                       About
                     </a>
                     <a
                       href="/contact"
-                      className="text-white hover:underline group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      className="text-white hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
                       aria-current="page"
                     >
                       Contact
