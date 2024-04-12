@@ -25,7 +25,7 @@ function NavBar({}: Props) {
   }, []);
 
   return (
-    <nav className={`fixed inset-x-0 group ${scrolledPastThreshold ? "bg-black" : "bg-transparent"} hover:bg-white transition duration-300 ease-in-out z-10`}>
+    <nav className={`fixed inset-x-0 group ${scrolledPastThreshold ? "bg-white" : "bg-transparent"} hover:bg-white transition duration-300 ease-in-out z-10`}>
       <div className="mx-auto max-w-7xl px-2 sm:px-0">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -71,14 +71,14 @@ function NavBar({}: Props) {
             <div className="flex items-center">
               <a href="/" className="absolute">
                 <img
-                  className="relative flex h-20 w-auto transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                  className={`relative flex h-20 w-auto transition-opacity duration-300 ${scrolledPastThreshold ? "opacity-0" : "opacity-100"} group-hover:opacity-0`}
                   src="/WhiteLogoTransparent.png"
                   alt=""
                 />
               </a>
               <a href="/">
                 <img
-                  className="relative flex h-20 w-auto transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                  className={`relative flex h-20 w-auto transition-opacity duration-300 ${scrolledPastThreshold ? "opacity-100" : "opacity-0"} group-hover:opacity-100`}
                   src="/BlackLogoTransparent.png"
                   alt=""
                 />
@@ -88,28 +88,28 @@ function NavBar({}: Props) {
                   <div className="flex space-x-4">
                     <a
                       href="/families"
-                      className="text-white hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      className={`${scrolledPastThreshold ? "text-black" : "text-white"} hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium`}
                       aria-current="page"
                     >
                       Families
                     </a>
                     <a
                       href="/teams"
-                      className="text-white hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      className={`${scrolledPastThreshold ? "text-black" : "text-white"} hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium`}
                       aria-current="page"
                     >
                       Teams
                     </a>
                     <a
                       href="/about"
-                      className="text-white hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      className={`${scrolledPastThreshold ? "text-black" : "text-white"} hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium`}
                       aria-current="page"
                     >
                       About
                     </a>
                     <a
                       href="/contact"
-                      className="text-white hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+                      className={`${scrolledPastThreshold ? "text-black" : "text-white"} hover:underline transition duration-300 group-hover:text-black rounded-md px-3 py-2 text-sm font-medium`}
                       aria-current="page"
                     >
                       Contact
