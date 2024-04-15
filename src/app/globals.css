@@ -29,3 +29,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: white !important;
 }
+
+textarea {
+  resize: none;
+}
