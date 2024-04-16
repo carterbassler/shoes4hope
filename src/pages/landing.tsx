@@ -74,7 +74,7 @@ function landing({}: Props) {
         </div>
       </div>
       <div className="flex flex-col items-center text-black px-12 py-12 space-y-12">
-        <ScrollTrigger onEnter={() => setCounterOn(true)}>
+        {/* <ScrollTrigger onEnter={() => setCounterOn(true)}> */}
           <div className="grid grid-cols-2 gap-6">
             <div className="flex flex-col space-y-2">
               <h1 className="text-7xl font-bold">
@@ -95,7 +95,7 @@ function landing({}: Props) {
               <h1>All-Time States</h1>
             </div>
           </div>
-        </ScrollTrigger>
+        {/* </ScrollTrigger> */}
       </div>
       <div className="flex flex-col items-center text-black px-12 py-12 space-y-12">
         <h1 className="text-4xl font-bold">Spotlight</h1>
