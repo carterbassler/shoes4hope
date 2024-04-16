@@ -1,9 +1,7 @@
-import Donate from "@/pages/donate/donate";
-
 export default function DonatePage() {
   return (
     <div>
-      <Donate/>
+      <h1>Donate</h1>
     </div>
   );
 }

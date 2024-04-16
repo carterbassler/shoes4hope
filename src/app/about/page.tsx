@@ -1,9 +1,15 @@
-import About from "@/pages/about/about";
+import PageBackgroundImage from "@/components/PageBackgroundImage";
+import about_background from "/public/about.jpg";
+import NavBarBackground from "@/components/NavBarBackground";
 
 export default function AboutPage() {
   return (
     <div>
-      <About/>
+      <NavBarBackground color="black" />
+      <PageBackgroundImage
+          image={about_background}
+          description="Landing Background Image"
+        />
     </div>
   );
 }
