@@ -30,7 +30,7 @@ function NavBar({}: Props) {
         scrolledPastThreshold ? "bg-white" : "bg-transparent"
       } hover:bg-white transition duration-300 ease-in-out z-10`}
     >
-      <div className="mx-12 px-2 sm:px-0">
+      <div className="mx-24 px-2 sm:px-0">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
@@ -136,14 +136,24 @@ function NavBar({}: Props) {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <a href="/donate">
-              <button
-                type="button"
-                className="relative rounded-xl bg-orange-500 px-6 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-              >
-                Donate
-              </button>
-            </a>
+            <div className="flex flex-row space-x-4">
+              <a href="/donate">
+                <button
+                  type="button"
+                  className="relative rounded-xl bg-[#3A4045] px-6 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
+                  Get Involved
+                </button>
+              </a>
+              <a href="/donate">
+                <button
+                  type="button"
+                  className="relative rounded-xl bg-orange-500 px-6 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
+                  Donate
+                </button>
+              </a>
+            </div>
 
             <div className="relative ml-3">
               {/* <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex={-1}>

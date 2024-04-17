@@ -3,7 +3,7 @@ import PageBackgroundSolid from '@/components/PageBackgroundSolid'
 import Head from 'next/head';
 import { Inter } from "next/font/google";
 import Image from 'next/image';
-import white_logo from "/public/WhiteFullLogoTransparentCropped.png"
+import white_logo from "/public/WhiteFullLogoTransparent.png"
 import instagram from "/public/instagram_logo.png"
 import linkedin from "/public/linkedin_logo.png"
 import facebook from "/public/facebook_logo.png"
