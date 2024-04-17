@@ -20,17 +20,16 @@ function landing({}: Props) {
   return (
     <div className="flex flex-col space-y-24">
       <div>
-        <NavBarBackground color="black" />
         <PageBackgroundImage
           image={landing_background}
           description="Landing Background Image"
         />
       </div>
       <div className="absolute flex-col left-28 top-32 space-y-6 flex items-start justify-center">
-        <h1 className="text-7xl w-2/3 font-bold">
+        <h1 className="text-7xl text-white w-2/3 font-bold">
           We Tell Stories Through Shoes
         </h1>
-        <button className="bg-orange-500 rounded-2xl text-xl px-5 py-3">
+        <button className="bg-orange-500 text-white rounded-2xl text-xl px-5 py-3">
           Learn More
         </button>        
       </div>

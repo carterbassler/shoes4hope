@@ -78,7 +78,7 @@ function NavBar({}: Props) {
                   className={`relative flex h-32 w-auto transition-opacity duration-300 ${
                     scrolledPastThreshold ? "opacity-0" : "opacity-100"
                   } group-hover:opacity-0`}
-                  src="/WhiteLogoTransparent.png"
+                  src="/WhiteFullLogoTransparent.png"
                   alt=""
                 />
               </a>
@@ -87,7 +87,7 @@ function NavBar({}: Props) {
                   className={`relative flex h-32 w-auto transition-opacity duration-300 ${
                     scrolledPastThreshold ? "opacity-100" : "opacity-0"
                   } group-hover:opacity-100`}
-                  src="/BlackLogoTransparent.png"
+                  src="/BlackFullLogoTransparent.png"
                   alt=""
                 />
               </a>
